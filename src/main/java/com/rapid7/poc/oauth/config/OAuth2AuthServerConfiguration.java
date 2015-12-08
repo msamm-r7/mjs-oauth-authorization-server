@@ -63,7 +63,8 @@ public class OAuth2AuthServerConfiguration {
             clients
                 .inMemory()
                     .withClient("clientapp")
-                        .authorizedGrantTypes("password", "refresh_token", "check_token")
+                        .authorizedGrantTypes("client_credentials", "password", "refresh_token", "check_token")
+                        //.authorizedGrantTypes("client_credentials", "refresh_token", "check_token")
                         .authorities("USER")
                         .scopes("read", "write")
                         .resourceIds(AUTH_SERVER_RESOURCE_ID, RESOURCE_SERVER_RESOURCE_ID)
